@@ -2,18 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EcommerceComponent } from './ecommerce.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
-  { path: '', component: EcommerceComponent },
+  { path: '', component: EcommerceComponent }
 ];
 
 @NgModule({
-  declarations: [
-    EcommerceComponent
-  ],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forChild(routes)
+  ],
+  declarations: [
+    EcommerceComponent
   ]
 })
 export class EcommerceModule { }
