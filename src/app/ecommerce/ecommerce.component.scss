@@ -1,12 +1,19 @@
-main {
-  margin-top: 90px;
+
+.main-wrap {
+  margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+
+}
+
+.grid-layout {
+  justify-content: flex-start;
+}
+.list-layout {
+  justify-content: space-between;
 }
 .card {
-    width: 350px;
-    height: 350px;
+    height: 300px;
     border: 1px solid gray;
     padding: 15px;
     margin: 2em;
@@ -33,12 +40,6 @@ main {
     font-family: "Roboto", sans-serif;
     font-size: large;
   }
-  
-  .card:hover .card-info {
-    transform: translateY(0);
-    transition: transform 0.2s ease-in;
-  }
-  
   .card h2 {
     font-family: "Roboto", sans-serif;
     display: inline;
@@ -57,4 +58,20 @@ main {
     background-color: rgb(211, 210, 210);
     padding: 5px;
     margin: 5px;
+  }
+
+  .grid-view {
+    width: calc(22% - 2em);
+  }
+
+  .list-view {
+    width: calc(36% - 2em);
+  }
+
+  .filter {
+    margin-top: 80px;
+    margin-right: 5%;
+  }
+  .view-filter {
+    margin-right: 12px;
   }

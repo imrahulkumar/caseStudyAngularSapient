@@ -1,23 +1,48 @@
-<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+<nav class="navbar navbar-dark navbar-expand-sm bg-dark fixed-top">
   <div class="container">
-      <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
-      <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ms-auto">
-              <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" [routerLink]="['/animation-banner']">Link 1</a></li>
-              <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" [routerLink]="['/e-commerce']">Link 2</a></li>
-              <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" [routerLink]="['/timer']">Link 3</a></li>
-              <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" [routerLink]="['/dynamic-table']">Link 4</a></li>
-              <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" [routerLink]="['/dynamic-alert']">Link 5</a></li>
-              <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" [routerLink]="['/dynamic-alert']">Link 6</a></li>
-          </ul>
-      </div>
+    <a href="/" class="navbar-brand">
+      <i class="fas fa-blog"></i> &nbsp; Blog Template
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarCollapse"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a [routerLink]="['/animation-banner']" class="nav-link active">
+            Link 1
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/e-commerce']" class="nav-link active"> Link 2 </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/dynamic-alert']" class="nav-link active">
+            Link 3
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/dynamic-table']" class="nav-link active">
+            Link 4
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/dynamic-table']" class="nav-link active">
+            Link 5
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
-<section>
+<section class="container-fluid">
   <router-outlet></router-outlet>
 </section>
