@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'animation-banner', loadChildren: () => import('./animation-banner/animation-banner.module').then(m => m.AnimationBannerModule)  },
   { path: 'e-commerce', loadChildren: () => import('./ecommerce/ecommerce.module').then(m => m.EcommerceModule) },
   { path: 'count-down', loadChildren: () => import('./coutdown/coutdown.module').then(m => m.CoutdownModule) },
-  // { path: 'timer', component: TimerComponent },
+  { path: 'count-down-timer', loadChildren: () => import('./timer/timer.module').then(m => m.TimerModule) },
   { path: 'dynamic-table',  loadChildren: () => import('./dynamic-table/dynamic-table.module').then(m => m.DynamicTableModule) },
   { path: 'dynamic-alert', loadChildren: () => import('./dynamic-alert/dynamic-alert.module').then(m => m.DynamicAlertModule) }
 ];
