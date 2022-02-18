@@ -1,18 +1,18 @@
 <section class="container-timer">
     <div class="row">
         <div class="col-6">
-            <app-countdown-timer-view></app-countdown-timer-view>
+            <app-countdown-timer-view [timeDisplay]="timeDisplayData"></app-countdown-timer-view>
         </div>
         <div class="col-6">
-            <app-countdown-timer-control></app-countdown-timer-control>
+            <app-countdown-timer-control (changeInTime)="triggerInchangeInTime($event)" (changeInStatus)="triggerInStatus($event)" (changeInStatusCounter)="triggerStatusCounter($event)"></app-countdown-timer-control>
         </div>
     </div>
     <div class="row">
         <div class="col-6">
-            <app-countdown-timer-log></app-countdown-timer-log>
+            <app-countdown-timer-log [logList]="logListData"></app-countdown-timer-log>
         </div>
         <div class="col-6">
-            <app-countdown-timer-status></app-countdown-timer-status>
+            <app-countdown-timer-status [statusCounter]="statusCounterData"></app-countdown-timer-status>
         </div>
     </div>
 </section>

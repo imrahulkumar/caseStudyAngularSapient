@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-countdown-timer-status',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountdownTimerStatusComponent implements OnInit {
 
+  @Input() statusCounter:any;
   constructor() { }
 
   ngOnInit(): void {
