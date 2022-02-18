@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'e-commerce', loadChildren: () => import('./ecommerce/ecommerce.module').then(m => m.EcommerceModule) },
   { path: 'count-down', loadChildren: () => import('./coutdown/coutdown.module').then(m => m.CoutdownModule) },
   // { path: 'timer', component: TimerComponent },
-  // { path: 'dynamic-table', component: DynamicTableComponent },
+  { path: 'dynamic-table',  loadChildren: () => import('./dynamic-table/dynamic-table.module').then(m => m.DynamicTableModule) },
   // { path: 'dynamic-alert', component: DynamicAlertComponent }
 ];
 

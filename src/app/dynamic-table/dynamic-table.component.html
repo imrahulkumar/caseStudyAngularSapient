@@ -1,1 +1,39 @@
-<p>dynamic-table works!</p>
+<section class="dynamic-table">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col" *ngFor="let d of productHeaderArr">
+          {{ d.title }}
+          <ng-container *ngIf="d.field != 'title'">
+          <i
+            *ngIf="colSort.selectedCol != d.field"
+            class="fas fa-sort cursor-pointer"
+            (click)="colSorting(d)"
+          ></i>
+          <i
+            *ngIf="
+              colSort.selectedCol === d.field && colSort.isOrder === 'desc'
+            "
+            class="fas fa-sort-up cursor-pointer"
+            (click)="colSorting(d)"
+          ></i>
+          <i
+            *ngIf="colSort.selectedCol === d.field && colSort.isOrder === 'asc'"
+            class="fas fa-sort-down cursor-pointer"
+            (click)="colSorting(d)"
+          ></i>
+        </ng-container>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of productArr">
+        <td>{{ d.title }}</td>
+        <td>{{ d.discountPercentage }}</td>
+        <td>{{ d.price }}</td>
+        <td>{{ d.rating }}</td>
+        <td>{{ d.stock }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
