@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 const routes: Routes = [
   { path: 'animation-banner', loadChildren: () => import('./animation-banner/animation-banner.module').then(m => m.AnimationBannerModule)  },
   { path: 'e-commerce', loadChildren: () => import('./ecommerce/ecommerce.module').then(m => m.EcommerceModule) },
