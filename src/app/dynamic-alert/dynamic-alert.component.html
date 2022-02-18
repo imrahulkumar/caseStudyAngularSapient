@@ -1,1 +1,13 @@
-<p>dynamic-alert works!</p>
+<section class="dynamic-alert">
+  <div
+  class="wrap"
+  infiniteScroll
+  [infiniteScrollDistance]="0.5"
+  (scrolled)="onScroll()"
+>
+  <div *ngFor="let box of boxes; let i = index" (click)="showSuccess(i + 1)" class="boxes mb-3 center-box">
+    {{i + 1}}
+  </div>
+</div>
+</section>
+

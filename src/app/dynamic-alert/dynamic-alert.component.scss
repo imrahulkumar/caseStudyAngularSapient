@@ -1,0 +1,21 @@
+.dynamic-alert {
+    margin-top: 80px;
+}
+.boxes {
+    height: 200px;
+    width: 200px;
+    background-color: blue;
+  }
+  
+  .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .center-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
