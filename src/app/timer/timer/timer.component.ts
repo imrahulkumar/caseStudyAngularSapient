@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { CountdownService } from '../countdown.service';
 import { TimerService } from '../timer.service';
 
@@ -7,27 +8,29 @@ import { TimerService } from '../timer.service';
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.scss']
 })
-export class TimerComponent implements OnInit {
+export class TimerComponent implements OnInit, OnDestroy  {
   timeDisplayData: number;
   setTimeDisplayData: number = 0;
   logListData:any = [];
   statusCounterData: any;
   timer:any;
 
+  subscriptions: Subscription[] = []
+
 
   constructor(private readonly countdown: CountdownService, private readonly timerService: TimerService){}
 
   ngOnInit(): void {
     this.init();
-    this.timerService.getChangeInTime().subscribe(response => {
+    this.subscriptions.push(this.timerService.getChangeInTime().subscribe(response => {
       this.triggerInchangeInTime(response);
-    })
-    this.timerService.getChangeInStatus().subscribe(response => {
+    }))
+    this.subscriptions.push(this.timerService.getChangeInStatus().subscribe(response => {
       this.triggerInStatus(response);
-   })
-   this.timerService.getChangeInStatusCounter().subscribe(response => {
+   }))
+   this.subscriptions.push(this.timerService.getChangeInStatusCounter().subscribe(response => {
       this.triggerStatusCounter(response);
-   })
+   }))
    }
  
    triggerInchangeInTime(e:any): void {
@@ -76,15 +79,17 @@ export class TimerComponent implements OnInit {
    }
  
    listerner(): void {
-     this.countdown.getCounterTick().subscribe(response => {
+    this.subscriptions.push(this.countdown.getCounterTick().subscribe(response => {
       //  this.setTimeDisplayData = response;
       this.timerService.setTimeDisplayDataSub(response);
 
-     });
+     }));
    }
  
    togglePause() {
      this.countdown.togglePauseStart();
    }
-
+   ngOnDestroy() {
+    this.subscriptions.forEach((subscription) => subscription.unsubscribe())
+}
 }
