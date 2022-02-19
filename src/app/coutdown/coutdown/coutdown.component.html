@@ -1,7 +1,7 @@
 <section class="container-timer">
     <div class="row">
         <div class="col-6">
-            <app-countdown-timer-view [timeDisplay]="timeDisplayData"></app-countdown-timer-view>
+            <app-countdown-timer-view [timeDisplay]="setTimeDisplayData"></app-countdown-timer-view>
         </div>
         <div class="col-6">
             <app-countdown-timer-control (changeInTime)="triggerInchangeInTime($event)" (changeInStatus)="triggerInStatus($event)" (changeInStatusCounter)="triggerStatusCounter($event)"></app-countdown-timer-control>

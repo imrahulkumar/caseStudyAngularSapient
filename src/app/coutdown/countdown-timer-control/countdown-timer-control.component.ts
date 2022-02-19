@@ -32,11 +32,11 @@ export class CountdownTimerControlComponent implements OnInit {
           this.isStart ? this.statusCounter.start++ : this.statusCounter.pause++ 
       } else {
         statusAction = status;
+        this.isStart = false;
       }
 
     this.changeInStatus.emit(statusAction);
     this.changeInStatusCounter.emit(this.statusCounter);
   }
-
 
 }

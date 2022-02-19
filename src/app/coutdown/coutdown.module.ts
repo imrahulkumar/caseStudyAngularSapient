@@ -6,8 +6,10 @@ import { CountdownTimerControlComponent } from './countdown-timer-control/countd
 import { CountdownTimerLogComponent } from './countdown-timer-log/countdown-timer-log.component';
 import { CountdownTimerStatusComponent } from './countdown-timer-status/countdown-timer-status.component';
 import { RouterModule, Routes } from '@angular/router';
-import { NumberDirective } from '../sharedContent/numbers-only.directive';
 import { SharedModule } from '../sharedContent/shared.module';
+import { CountdownService } from './countdown.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 const routes: Routes = [
   { path: '', component: CoutdownComponent }
@@ -24,7 +26,10 @@ const routes: Routes = [
   imports: [
     CommonModule,
     SharedModule,
+    FormsModule,                            
+    ReactiveFormsModule,   
     RouterModule.forChild(routes)
-  ]
+  ],
+  providers:[CountdownService]
 })
 export class CoutdownModule { }
