@@ -37,6 +37,7 @@ export class CoutdownComponent  implements OnInit  {
       } else {
         this.countdown.initialize();
         this.countdown.timerCounter();
+        this.listerner();
       }
     } else if (e === 'pause') {
       status = 'Paused';
