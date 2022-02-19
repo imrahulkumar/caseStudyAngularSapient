@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TimerService } from '../timer.service';
 
 @Component({
   selector: 'app-countdown-timer-log',
@@ -6,9 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./countdown-timer-log.component.scss'],
 })
 export class CountdownTimerLogComponent implements OnInit {
-  @Input() logList: any = [];
+ logList: any = [];
 
-  constructor() {}
+  constructor(private readonly timerService: TimerService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.timerService.getLogListDataSub().subscribe(response => {
+      this.logList = response;
+    })
+  }
 }

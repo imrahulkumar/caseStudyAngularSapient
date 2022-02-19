@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { TimerService } from '../timer.service';
 
 @Component({
   selector: 'app-countdown-timer-control',
@@ -7,21 +8,22 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class CountdownTimerControlComponent implements OnInit {
 
-  @Output() changeInTime = new EventEmitter();
-  @Output() changeInStatus = new EventEmitter();
-  @Output() changeInStatusCounter = new EventEmitter();
+  // @Output() changeInTime = new EventEmitter();
+  // @Output() changeInStatus = new EventEmitter();
+  // @Output() changeInStatusCounter = new EventEmitter();
   isStart = false;
   statusCounter = {
     pause: 0,
     start: 0
   }
-  constructor() { }
+  constructor(private readonly timerService: TimerService) { }
 
   ngOnInit(): void {
   }
 
   changeInTimer(e: any): void {
-     this.changeInTime.emit(e.target.value);
+    //  this.changeInTime.emit(e.target.value);
+    this.timerService.setChangeInTime(e.target.value);
   }
 
   changeInActionButton(status: string): void {
@@ -35,8 +37,10 @@ export class CountdownTimerControlComponent implements OnInit {
         this.isStart = false;
       }
 
-    this.changeInStatus.emit(statusAction);
-    this.changeInStatusCounter.emit(this.statusCounter);
+    // this.changeInStatus.emit(statusAction);
+    // this.changeInStatusCounter.emit(this.statusCounter);
+    this.timerService.setChangeInStatus(statusAction);
+    this.timerService.setChangeInStatusCounter(this.statusCounter);
   }
 
 }

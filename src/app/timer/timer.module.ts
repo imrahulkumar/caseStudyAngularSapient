@@ -7,6 +7,8 @@ import { CountdownTimerLogComponent } from './countdown-timer-log/countdown-time
 import { CountdownTimerStatusComponent } from './countdown-timer-status/countdown-timer-status.component';
 import { CountdownTimerViewComponent } from './countdown-timer-view/countdown-timer-view.component';
 import { FormsModule } from '@angular/forms';
+import { TimerService } from './timer.service';
+import { CountdownService } from './countdown.service';
 
 
 const routes: Routes = [
@@ -25,6 +27,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes)
-  ]
+  ],
+  providers:[TimerService, CountdownService]
 })
 export class TimerModule { }

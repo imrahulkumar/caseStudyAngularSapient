@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TimerService } from '../timer.service';
 
 @Component({
   selector: 'app-countdown-timer-status',
@@ -7,10 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CountdownTimerStatusComponent implements OnInit {
 
-  @Input() statusCounter:any;
-  constructor() { }
+  statusCounter:any;
+  constructor(private readonly timerService: TimerService) { }
 
   ngOnInit(): void {
+    this.timerService.getStatusCounterData().subscribe(response => {
+      this.statusCounter = response;
+    });
   }
 
 }
