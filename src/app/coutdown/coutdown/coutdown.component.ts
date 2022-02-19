@@ -53,14 +53,10 @@ export class CoutdownComponent  implements OnInit  {
 
   triggerStatusCounter(e:any): void {
     this.statusCounterData = e;
-    
   }
-
-
 
   init() {
    this.countdown.initialize();
-  
   }
 
   listerner(): void {
@@ -72,6 +68,4 @@ export class CoutdownComponent  implements OnInit  {
   togglePause() {
     this.countdown.togglePauseStart();
   }
-
-
 }
