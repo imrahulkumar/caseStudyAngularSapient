@@ -3,11 +3,10 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-dynamic-alert',
   templateUrl: './dynamic-alert.component.html',
-  styleUrls: ['./dynamic-alert.component.scss']
+  styleUrls: ['./dynamic-alert.component.scss'],
 })
-export class DynamicAlertComponent  {
-
-  constructor(private readonly toastr: ToastrService) { }
+export class DynamicAlertComponent {
+  constructor(private readonly toastr: ToastrService) {}
   boxes = Array.from(Array(18).keys());
 
   onScroll() {
@@ -15,8 +14,7 @@ export class DynamicAlertComponent  {
     this.boxes = [...this.boxes, ...moreBoxes];
   }
 
-
-  showSuccess(number:any){
-    this.toastr.success(`Button ${number} is clicked.`, 'Alert')
-}
+  showSuccess(number: any) {
+    this.toastr.success(`Button ${number} is clicked.`, 'Alert');
+  }
 }
