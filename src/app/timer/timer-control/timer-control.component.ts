@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TimerService } from '../timer.service';
 
 @Component({
@@ -7,10 +7,7 @@ import { TimerService } from '../timer.service';
   styleUrls: ['./timer-control.component.scss']
 })
 export class TimerControlComponent implements OnInit {
-
-  // @Output() changeInTime = new EventEmitter();
-  // @Output() changeInStatus = new EventEmitter();
-  // @Output() changeInStatusCounter = new EventEmitter();
+  timerStatus: string = '';
   isStart = false;
   statusCounter = {
     pause: 0,
@@ -30,15 +27,17 @@ export class TimerControlComponent implements OnInit {
     let statusAction;
       if (status === 'start') {
           this.isStart = !this.isStart;
-          statusAction = this.isStart ? 'start' : 'pause'
+          statusAction = this.isStart ? 'start' : 'pause';
+          this.timerStatus = statusAction;
           this.isStart ? this.statusCounter.start++ : this.statusCounter.pause++ 
       } else {
         statusAction = status;
         this.isStart = false;
+        this.timerStatus = statusAction;
+
       }
 
-    // this.changeInStatus.emit(statusAction);
-    // this.changeInStatusCounter.emit(this.statusCounter);
+
     this.timerService.setChangeInStatus(statusAction);
     this.timerService.setChangeInStatusCounter(this.statusCounter);
   }
