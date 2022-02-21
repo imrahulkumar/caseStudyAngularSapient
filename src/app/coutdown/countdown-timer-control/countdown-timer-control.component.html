@@ -6,6 +6,7 @@
             >
             <div class="col-sm-6">
               <input
+               [disabled]="!(timerStatus === 'reset' || timerStatus === '')"
                 ngModel
                 (input)="changeInTimer($event)"
                 numbersOnly
@@ -19,7 +20,7 @@
           <div class="form-group row">
               <div class="col-12 text-right">
                 <button type="button" [disabled]="!timerCount.value" class="btn btn-sm btn-primary mr-1" (click)="changeInActionButton('start')">Start / Pause </button>
-                <button type="button" [disabled]="!timerCount.value" class="btn btn-sm btn-danger" (click)="changeInActionButton('reset')">Reset </button>
+                <button type="button" [disabled]="!(timerStatus === 'start' || timerStatus === 'pause')" class="btn btn-sm btn-danger" (click)="changeInActionButton('reset')">Reset </button>
               </div>
            
           </div>

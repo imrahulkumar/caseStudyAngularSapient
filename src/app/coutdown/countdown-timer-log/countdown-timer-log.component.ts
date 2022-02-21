@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-countdown-timer-log',
@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CountdownTimerLogComponent implements OnInit {
   @Input() logList: any = [];
-
+  
   constructor() {}
 
   ngOnInit(): void {}

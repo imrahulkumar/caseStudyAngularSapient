@@ -1,4 +1,4 @@
-<section class="countdown-log mt-1">
+<section class="countdown-log mt-1" #log [scrollTop]="log.scrollHeight" >
     <div *ngFor="let d of logList">
      {{d.status}} at  {{d.time | date: 'd-M-yyyy hh:mm:ss a'}}
     </div>

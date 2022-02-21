@@ -48,7 +48,7 @@ export class CoutdownComponent  implements OnInit  {
       this.countdown.setTimerTime(-1);
       this.setTimeDisplayData = 0;
     }
-    this.logListData.push({ status: status, time: new Date() });
+    this.logListData = [...this.logListData, { status: status, time: new Date() }]
   }
 
   triggerStatusCounter(e:any): void {
