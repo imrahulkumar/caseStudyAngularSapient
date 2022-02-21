@@ -4,20 +4,23 @@
             <h5>Using Input and Output Decorator</h5>
         </div>
     </div>
-    <div class="row">
-        <div class="col-6">
-            <app-countdown-timer-view [timeDisplay]="setTimeDisplayData"></app-countdown-timer-view>
+    <div class="timer-conatiner">
+        <div class="row">
+            <div class="col-6">
+                <app-countdown-timer-view [timeDisplay]="setTimeDisplayData"></app-countdown-timer-view>
+            </div>
+            <div class="col-6">
+                <app-countdown-timer-control (changeInTime)="triggerInchangeInTime($event)" (changeInStatus)="triggerInStatus($event)" (changeInStatusCounter)="triggerStatusCounter($event)"></app-countdown-timer-control>
+            </div>
         </div>
-        <div class="col-6">
-            <app-countdown-timer-control (changeInTime)="triggerInchangeInTime($event)" (changeInStatus)="triggerInStatus($event)" (changeInStatusCounter)="triggerStatusCounter($event)"></app-countdown-timer-control>
+        <div class="row">
+            <div class="col-6">
+                <app-countdown-timer-log [logList]="logListData"></app-countdown-timer-log>
+            </div>
+            <div class="col-6">
+                <app-countdown-timer-status [statusCounter]="statusCounterData"></app-countdown-timer-status>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-6">
-            <app-countdown-timer-log [logList]="logListData"></app-countdown-timer-log>
-        </div>
-        <div class="col-6">
-            <app-countdown-timer-status [statusCounter]="statusCounterData"></app-countdown-timer-status>
-        </div>
-    </div>
+
 </section>
