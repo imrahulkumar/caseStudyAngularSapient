@@ -8,10 +8,10 @@ import { ToastrService } from 'ngx-toastr';
 export class DynamicAlertComponent  {
 
   constructor(private readonly toastr: ToastrService) { }
-  boxes = [1, 2, 3, 4, 5, 6, 7, 8, 9 , 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+  boxes = Array.from(Array(18).keys());
 
   onScroll() {
-    const moreBoxes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const moreBoxes = Array.from(Array(18).keys());
     this.boxes = [...this.boxes, ...moreBoxes];
   }
 
