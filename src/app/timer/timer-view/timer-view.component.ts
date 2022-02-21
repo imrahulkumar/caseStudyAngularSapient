@@ -3,11 +3,11 @@ import { Subscription } from 'rxjs';
 import { TimerService } from '../timer.service';
 
 @Component({
-  selector: 'app-countdown-timer-view',
-  templateUrl: './countdown-timer-view.component.html',
-  styleUrls: ['./countdown-timer-view.component.scss']
+  selector: 'app-timer-view',
+  templateUrl: './timer-view.component.html',
+  styleUrls: ['./timer-view.component.scss']
 })
-export class CountdownTimerViewComponent implements OnInit, OnDestroy  {
+export class TimerViewComponent implements OnInit, OnDestroy  {
 
    timeDisplay: number = 0;
    subscriptions: Subscription[] = [];

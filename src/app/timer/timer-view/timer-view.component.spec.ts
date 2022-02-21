@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CountdownTimerLogComponent } from './countdown-timer-log.component';
+import { CountdownTimerViewComponent } from './timer-view.component';
 
-describe('CountdownTimerLogComponent', () => {
-  let component: CountdownTimerLogComponent;
-  let fixture: ComponentFixture<CountdownTimerLogComponent>;
+describe('CountdownTimerViewComponent', () => {
+  let component: CountdownTimerViewComponent;
+  let fixture: ComponentFixture<CountdownTimerViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CountdownTimerLogComponent ]
+      declarations: [ CountdownTimerViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CountdownTimerLogComponent);
+    fixture = TestBed.createComponent(CountdownTimerViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

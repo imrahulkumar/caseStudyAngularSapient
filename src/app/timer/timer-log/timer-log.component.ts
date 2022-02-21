@@ -3,11 +3,11 @@ import { Subscription } from 'rxjs';
 import { TimerService } from '../timer.service';
 
 @Component({
-  selector: 'app-countdown-timer-log',
-  templateUrl: './countdown-timer-log.component.html',
-  styleUrls: ['./countdown-timer-log.component.scss'],
+  selector: 'app-timer-log',
+  templateUrl: './timer-log.component.html',
+  styleUrls: ['./timer-log.component.scss'],
 })
-export class CountdownTimerLogComponent implements OnInit, OnDestroy {
+export class TimerLogComponent implements OnInit, OnDestroy {
  logList: any = [];
  subscriptions: Subscription[] = [];
   constructor(private readonly timerService: TimerService) {}

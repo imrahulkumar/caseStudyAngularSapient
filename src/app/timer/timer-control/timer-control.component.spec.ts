@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CountdownTimerControlComponent } from './countdown-timer-control.component';
+import { CountdownTimerControlComponent } from './timer-control.component';
 
 describe('CountdownTimerControlComponent', () => {
   let component: CountdownTimerControlComponent;

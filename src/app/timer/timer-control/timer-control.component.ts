@@ -2,11 +2,11 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TimerService } from '../timer.service';
 
 @Component({
-  selector: 'app-countdown-timer-control',
-  templateUrl: './countdown-timer-control.component.html',
-  styleUrls: ['./countdown-timer-control.component.scss']
+  selector: 'app-timer-control',
+  templateUrl: './timer-control.component.html',
+  styleUrls: ['./timer-control.component.scss']
 })
-export class CountdownTimerControlComponent implements OnInit {
+export class TimerControlComponent implements OnInit {
 
   // @Output() changeInTime = new EventEmitter();
   // @Output() changeInStatus = new EventEmitter();

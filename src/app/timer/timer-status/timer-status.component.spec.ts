@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CountdownTimerStatusComponent } from './countdown-timer-status.component';
+import { CountdownTimerStatusComponent } from './timer-status.component';
 
 describe('CountdownTimerStatusComponent', () => {
   let component: CountdownTimerStatusComponent;
